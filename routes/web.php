@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+include 'auth.php'; // include authentication routes
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
